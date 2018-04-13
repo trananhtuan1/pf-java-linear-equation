@@ -2,10 +2,26 @@ import java.util.Scanner;
 
 public class SolveLinearEquation {
     public static void main(String[] args) {
-        System.out.println("Please input arguments");
-        double[] arguments = getArgumentsFromKeyboard();
-        double[] tapnghiem = solve(arguments[0], arguments[1]);
-        printTapNghiem(arguments[0], arguments[1], tapnghiem);
+        boolean wantToSolve = true;
+
+        while (wantToSolve) {
+            System.out.println("Please input arguments");
+
+            double[] arguments = getArgumentsFromKeyboard();
+            double[] tapnghiem = solve(arguments[0], arguments[1]);
+            printTapNghiem(arguments[0], arguments[1], tapnghiem);
+
+            wantToSolve = askUserToContinue();
+        }
+
+        System.out.println("Thanks you!");
+    }
+
+    public static boolean askUserToContinue() {
+        System.out.println("Are you want to contine? (Y/n)");
+        String answer = new Scanner(System.in).nextLine();
+        if (answer.equals("y") || answer.equals("Y")) return true;
+        return false;
     }
 
     public static double[] getArgumentsFromKeyboard() {
