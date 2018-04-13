@@ -12,6 +12,9 @@ public class SolveLinearEquation {
         if (a == 0) System.out.println("Phuong trinh "
                 + a + " * x + " + b + " = 0" +
                 " vo nghiem");
-
+        else {
+            double nghiem = -b / a;
+            System.out.println("Phuong trinh co 1 nghiem: " + nghiem);
+        }
     }
 }
