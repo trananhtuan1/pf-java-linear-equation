@@ -9,6 +9,9 @@ public class SolveLinearEquation {
         System.out.print("b: ");
         double b = new Scanner(System.in).nextDouble();
 
-        System.out.println("You inputed " + a + " and " + b);
+        if (a == 0) System.out.println("Phuong trinh "
+                + a + " * x + " + b + " = 0" +
+                " vo nghiem");
+
     }
 }
