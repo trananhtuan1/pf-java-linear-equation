@@ -9,12 +9,22 @@ public class SolveLinearEquation {
         System.out.print("b: ");
         double b = new Scanner(System.in).nextDouble();
 
-        if (a == 0) System.out.println("Phuong trinh "
+        double[] tapnghiem = solve(a, b);
+
+        if (tapnghiem.length == 0) System.out.println("Phuong trinh "
                 + a + " * x + " + b + " = 0" +
                 " vo nghiem");
         else {
-            double nghiem = -b / a;
+            double nghiem = tapnghiem[0];
             System.out.println("Phuong trinh co 1 nghiem: " + nghiem);
         }
+    }
+
+    public static double[] solve(double a, double b) {
+        boolean conghiem = a != 0;
+        if (!conghiem) return new double[]{};
+
+        double ngiem = -b / a;
+        return new double[]{ngiem};
     }
 }
