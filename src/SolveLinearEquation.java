@@ -9,13 +9,14 @@ public class SolveLinearEquation {
     }
 
     public static double[] getArgumentsFromKeyboard() {
-        System.out.print("a: ");
-        double a = new Scanner(System.in).nextDouble();
-
-        System.out.print("b: ");
-        double b = new Scanner(System.in).nextDouble();
-
+        double a = printMessageAndGetDoubleFromKeyboard("a: ");
+        double b = printMessageAndGetDoubleFromKeyboard("b: ");
         return new double[]{a, b};
+    }
+
+    public static double printMessageAndGetDoubleFromKeyboard(String message) {
+        System.out.print(message);
+        return new Scanner(System.in).nextDouble();
     }
 
     public static double[] solve(double a, double b) {
